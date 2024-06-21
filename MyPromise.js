@@ -165,7 +165,7 @@ class MyPromise {
 		return new MyPromise((resolve, reject) => {
 			for (let i = 0; i < promises.length; i++) {
 				const promise = promises[i];
-				promise.then(resolve).reject(value => {
+				promise.then(resolve).catch(value => {
 					erredPromises++;
 					errors[i] = value;
 					if (erredPromises === promises.length) {
